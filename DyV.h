@@ -2,8 +2,22 @@
 #include <algorithm>
 #include <iostream>
 
+template <typename T>
+
+void CambiarOrden(std::vector<T>& v, int ini, int fin){
+	if(ini>=fin){
+		return;
+	}
+	
+	T aux = v[ini];
+	v[ini] = v[fin];
+	v[fin] = aux;
+	return CambiarOrden(v, ini + 1, fin - 1);
+}
+
 template <typename T> 
-                                                                            int BusquedaBinaria(T x, std::vector<T>& v, int ini, int fin){
+
+int BusquedaBinaria(T x, std::vector<T>& v, int ini, int fin){
 	
 	if(ini > fin){
 		return -1;
@@ -18,6 +32,25 @@ template <typename T>
 	}else{
 		return BusquedaBinaria(x, v, medio + 1, fin);
 	}
+}
+
+template <typename T>
+
+int BusquedaBinaria_INV(T x, std::vector<T>& v, int ini, int fin){
+
+        if(ini > fin){
+                return -1;
+        }
+
+        int medio = (ini + fin)/2;
+
+        if(v[medio] == x){
+                return medio;
+        }else if(v[medio] > x){
+                return BusquedaBinaria_INV(x, v, medio + 1, fin);
+        }else{
+                return BusquedaBinaria_INV(x, v, ini, medio - 1);
+        }
 }
 
 template <typename T>
