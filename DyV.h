@@ -1,6 +1,8 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 template <typename T>
 
@@ -13,6 +15,16 @@ void CambiarOrden(std::vector<T>& v, int ini, int fin){
 	v[ini] = v[fin];
 	v[fin] = aux;
 	return CambiarOrden(v, ini + 1, fin - 1);
+}
+
+template <typename T>
+
+void desordenarVector(std::vector<T>& v, int ini, int fin){
+
+    for (int i = ini; i <= fin; i++) {
+        int j = ini + rand() % (fin - ini + 1);
+        std::swap(v[i], v[j]);
+    }
 }
 
 template <typename T> 
