@@ -3,8 +3,13 @@
 #include <algorithm>
 #include <string>
 #include <DyV.h>
+#include <cstdlib>
+#include <ctime>
 
 int main(){
+
+	std::srand(std::time(NULL));
+
 	std::vector<int> i = {1, 2, 3, 4, 5};
 	int in = 1;
 	std::vector<float> f = {18.5, 19.2, 20.0, 21.3, 22.8};
@@ -83,7 +88,46 @@ int main(){
 					std::cout << "Opcion no aceptable" << std::endl;
 					break;
 			}
+			break;
+
 		case 2:
+			switch(tipo3){
+				case 1:
+                               		desordenarVector(i, 0, i.size() - 1);
+					Partition(i, 0, i.size() - 1);
+					QuickSort(i, 0, i.size() - 1);
+					visualizarVector(i);
+                               		break;
+                               	case 2:
+					desordenarVector(f, 0, f.size() - 1);
+                                        Partition(f, 0, f.size() - 1);
+                                        QuickSort(f, 0, f.size() - 1);
+                                        visualizarVector(f);
+                                        break;
+                                case 3:
+                                        desordenarVector(d, 0, d.size() - 1);
+					Partition(d, 0, d.size() - 1);
+                                        QuickSort(d, 0, d.size() - 1);
+                                        visualizarVector(d);
+                                        break;
+                                case 4:
+                                        desordenarVector(c, 0, c.size() - 1);
+					Partition(c, 0, c.size() - 1);
+                                        QuickSort(c, 0, c.size() - 1);
+                                        visualizarVector(c);
+                                        break;
+                                case 5:
+                                        desordenarVector(s, 0, s.size() - 1);
+					Partition(s, 0, s.size() - 1);
+                                        QuickSort(s, 0, s.size() - 1);
+                                        visualizarVector(s);
+                                        break;
+                                default:
+                                        std::cout << "Opcion no aceptable" << std::endl;
+                                        break;
+                       }
+                       break;
+
 		default:
 			std::cout << "Opcion no aceptable" << std::endl;
 			break;
