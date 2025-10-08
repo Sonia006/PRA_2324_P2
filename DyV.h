@@ -6,7 +6,7 @@
 
 template <typename T>
 
-void CambiarOrden(std::vector<T>& v, int ini, int fin){
+void ordenarVector(std::vector<T>& v, int ini, int fin){
 	if(ini>=fin){
 		return;
 	}
