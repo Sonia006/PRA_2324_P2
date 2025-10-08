@@ -14,7 +14,7 @@ void ordenarVector(std::vector<T>& v, int ini, int fin){
 	T aux = v[ini];
 	v[ini] = v[fin];
 	v[fin] = aux;
-	return CambiarOrden(v, ini + 1, fin - 1);
+	return ordenarVector(v, ini + 1, fin - 1);
 }
 
 template <typename T>
